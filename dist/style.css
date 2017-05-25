@@ -1,0 +1,9 @@
+.flightsTable_flight_i {
+	/*display: inline-block;*/
+	text-align: right;
+	padding-left: 10px; 
+}.button {
+	cursor: pointer;
+	background-color: white;
+}
+/*# sourceMappingURL=main.map*/
