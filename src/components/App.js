@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import Tablo from './Tablo';
 import * as fetchAction from '../actions/FetchAction';
-import '../main.css';
+import '../style/app.css';
 
 class App extends Component {
 	/**
@@ -42,14 +42,15 @@ class App extends Component {
 				getArrivalFlights,
 				editFlight, 
 				deleteFlight } = this.props.fetchAction;
+		const { tabloOpenBtnText, tabloIsOpen } = this.state;
 
 		return (
 			<div className="tablo_container">
 				<div className="tablo_header">Online Табло</div>
 				<button className="tablo_openBtn button" onClick={::this.onTabloOpenBtnClick}>
-					{this.state.tabloOpenBtnText}
+					{ tabloOpenBtnText }
 				</button>
-				{ this.state.tabloIsOpen ?
+				{ tabloIsOpen ?
 					<Tablo 
 						flights={tablo.flights}
 						showFlights={tablo.showFlights} 

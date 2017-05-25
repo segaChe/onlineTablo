@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import createFragment from 'react-addons-create-fragment';
 import PropTypes from 'prop-types';
 // import styles from '../style/tablo.css';
-import '../style/tablo.css';
+import '../style/flight.css';
 
 export default class Flight extends Component {
 

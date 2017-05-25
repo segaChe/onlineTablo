@@ -1,5 +1,21 @@
-.flightsTable_flight_i {
-	/*display: inline-block;*/
-	text-align: right;
-	padding-left: 10px; 
+.tablo_content_wrap {
+
+}
+
+.tablo_content {
+ position: relative;
+}
+.adminBtn_wrap {
+  right: 0;
+  top: -10%;
+  display: inline-block;
+  margin-bottom: 1%;
+}
+.adminBtn_Header {
+  color: #666;
+  font-size: 0.8em;
+}
+.adminBtn {
+  font-size: 0.65em;
+  background-color: #888;
 }

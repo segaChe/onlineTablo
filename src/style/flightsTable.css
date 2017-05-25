@@ -1,0 +1,49 @@
+.flightsTable_container {
+	margin-top: 2%;
+}
+.flightsTable_menu {
+	margin-bottom: 2%;
+}
+
+.flightsTable_menu > * {
+	vertical-align: middle;
+}
+
+.changeCity {
+	margin-left: 2%;
+	padding: .2em 1em;
+	font-size: 1em; 
+}
+.changeStatus {
+	margin-left: 2%;
+	padding: .2em 1em;
+	font-size: 1em; 
+}
+.flightsTableHeader {
+	font-size: 1.5em;
+	font-weight: 700;
+	margin-bottom: 2%; 
+}
+.flightsTable {
+	margin: 0 auto;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.flightsTable_item:nth-child(even) {
+	background-color: #bbb; 
+}
+.flightsTable_flight_i {
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+.counterFlights {
+	font-size: 0.8em;
+	text-align: left;
+}
+
+th.flightsTable_flight_i {
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	background-color: #eee; 
+}

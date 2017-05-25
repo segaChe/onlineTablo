@@ -1,4 +1,30 @@
 .button {
-	cursor: pointer;
-	background-color: white;
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+  background: #555;
+  cursor: pointer;
+}
+
+.button:hover { background-color: #777; }
+.button:active { background: #999; }
+
+body {
+  width: 100%;
+  text-align: center;
+
+}
+
+#root {
+	/*width: 80%;*/
+  width: 730px;
+	margin: 0 auto;
+  font-family: sans-serif;
 }

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import FlightsTable from './FlightsTable';
 import Flight from './Flight.js';
-import styles from '../style/tablo.css';
+import styles from '../style/adminTablo.css';
 
 export default class AdminTablo extends Component {
 	/**
@@ -115,7 +115,7 @@ export default class AdminTablo extends Component {
 		return (
 			<div className="adminTablo_wrap">
 				<form className="adminTabloForm">
-					<div className="adminTabloForm_i flightTypes">
+					<div className=" flightTypes">
 						<label><input 
 								type="radio" 
 								ref="flightType" 
@@ -134,53 +134,69 @@ export default class AdminTablo extends Component {
 							Прибытие
 						</label>
 					</div>
-					<input 
-					 className="adminTabloForm_i"
-					 type="text" 
-					 placeholder="номер рейса" 
-					 defaultValue=""
-					 ref="flightNumber"
-					 onChange={::this._fieldChange.bind(this, 'flightNumberIsEmpty')} />
-
-					<input 
-					 className="adminTabloForm_i"
-					 type="text" 
-					 placeholder="город" 
-					 defaultValue=""
-					 ref="city"
-					 onChange={::this._fieldChange.bind(this, 'cityIsEmpty')} />
-
-					<input
-					 className="adminTabloForm_i"
-					 type="text" 
-					 placeholder="тип ВС" 
-					 defaultValue=""
-					 ref="airplaneType"
-					 onChange={::this._fieldChange.bind(this, 'airplaneIsEmpty')} />
-
-					<input
-					 className="adminTabloForm_i"
-					 type="text" 
-					 placeholder="время" 
-					 defaultValue=""
-					 ref="time"
-					 onChange={::this._fieldChange.bind(this, 'timeIsEmpty')} />
-
-					<input
-					 className="adminTabloForm_i"
-					 type="text" 
-					 placeholder="фактическое время" 
-					 defaultValue=""
-					 ref="timeFact"
-					 onChange={::this._fieldChange.bind(this, 'timeIsEmpty')} />
-
-					<input
-					 className="adminTabloForm_i"
-					 type="text" 
-					 placeholder="статус" 
-					 defaultValue="" 
-					 ref="status"/>
-
+					<div className="adminTabloForm_i_wrap">
+					<div className="adminTabloForm_i">
+						<label for="flightNumberId">Номер рейса:</label>
+						<input
+						 id="flightNumberId"
+						 type="text" 
+						 placeholder="номер рейса" 
+						 defaultValue=""
+						 ref="flightNumber"
+						 onChange={::this._fieldChange.bind(this, 'flightNumberIsEmpty')} />
+					</div>
+					<div className="adminTabloForm_i">
+						<label for="cityId">Город отправления\прибытия:</label>
+						<input
+						 id="cityId"
+						 type="text" 
+						 placeholder="город" 
+						 defaultValue=""
+						 ref="city"
+						 onChange={::this._fieldChange.bind(this, 'cityIsEmpty')} />
+					</div>
+					<div className="adminTabloForm_i">
+						<label for="airplaneTypeId">
+							Тип ВС <span>(Воздушное Судно):</span>
+						</label>
+						<input
+						 id="airplaneTypeId"
+						 type="text" 
+						 placeholder="тип ВС" 
+						 defaultValue=""
+						 ref="airplaneType"
+						 onChange={::this._fieldChange.bind(this, 'airplaneIsEmpty')} />
+					</div>
+					<div className="adminTabloForm_i">
+						<label for="timeId">Время отправления\прибытия:</label>
+						<input
+						 id="timeId"
+						 type="text" 
+						 placeholder="время" 
+						 defaultValue=""
+						 ref="time"
+						 onChange={::this._fieldChange.bind(this, 'timeIsEmpty')} />
+					</div>
+					<div className="adminTabloForm_i">
+						<label for="timeFactId">Фактическое время:</label>
+						<input
+						 id="timeFactId"
+						 type="text" 
+						 placeholder="фактическое время" 
+						 defaultValue=""
+						 ref="timeFact"
+						 onChange={::this._fieldChange.bind(this, 'timeIsEmpty')} />
+					</div>
+					<div className="adminTabloForm_i">
+						<label for="statusId">Статус:</label>
+						<input
+						 id="statusId"
+						 type="text" 
+						 placeholder="статус" 
+						 defaultValue="" 
+						 ref="status"/>
+					</div>
+					</div>
 					<button
 					 className="adminTabloForm_i addFlightBtn button"
 					 onClick={::this.onAddFlightBtn} 

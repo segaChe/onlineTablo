@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import FlightsTable from './FlightsTable';
 import AdminTablo from './AdminTablo';
 
+import '../style/tablo.css';
+
 export default class Tablo extends Component {
 	/**
 	 * @constructor

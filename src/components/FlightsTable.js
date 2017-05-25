@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Flight from './Flight.js';
-import '../style/tablo.css';
+import '../style/flightsTable.css';
 
 export default class FlightsTable extends Component {
 	/**
