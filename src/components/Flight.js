@@ -4,21 +4,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import createFragment from 'react-addons-create-fragment';
 import PropTypes from 'prop-types';
-// import styles from '../style/tablo.css';
 import '../style/flight.css';
 
 export default class Flight extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-
-		};
-	}
 	/**
-	 * 
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * Получает и сохроняет новые данные рейса
+	 * @param  {Object} event объект события
 	 */
 	onEditFlightBtnClick(event) {
 		let flights = this.props.flights,
@@ -29,18 +21,10 @@ export default class Flight extends Component {
 			status = ReactDOM.findDOMNode(this.refs.status).value;
 
 		this.props.editFlight(flights, flightId, flightType, status, timeFact);
-		// console.log(event.target.dataset.index);
-
-		// if (flightType == 'DepartureFlights') {
-		// 	this.props.getDepartureFlights(flights);
-		// } else {
-		// 	this.props.getArrivalFlights(flights);
-		// }
 	}
 	/**
-	 * 
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * Удаляет рейс
+	 * @param  {Object} event объект события
 	 */
 	onDeleteFlightBtnClick(event) {
 		let flights = this.props.flights,
@@ -95,7 +79,7 @@ export default class Flight extends Component {
 						  data-index={id}
 						  data-flightType={flightType}
 						  onClick={::this.onEditFlightBtnClick}>
-							Редактировать
+							Сохранить
 						</button>
 						<button
 						  className="deleteFlightBtn button"
@@ -109,7 +93,10 @@ export default class Flight extends Component {
 		); 
 	}
 }
-
+/**
+ * Типы данных передаваемых компоненте
+ * @type {Object}
+ */
 Flight.propTypes = {
   data: PropTypes.object.isRequired,
   flights: PropTypes.object.isRequired,

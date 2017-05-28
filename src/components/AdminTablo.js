@@ -10,8 +10,6 @@ import styles from '../style/adminTablo.css';
 export default class AdminTablo extends Component {
 	/**
 	 * @constructor
-	 * @param  {[type]} props [description]
-	 * @return {[type]}       [description]
 	 */
 	constructor (props) {
 		super(props);
@@ -25,13 +23,14 @@ export default class AdminTablo extends Component {
 		};
 	}
 	/**
-	 * 
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * Добавляем новый рейс
+	 * @param  {Object} event объект события
 	 */
 	onAddFlightBtn (event) {
 		event.preventDefault();
+
 		this.setState({counterId: ++this.state.counterId});
+
 		let flightNumberEl = ReactDOM.findDOMNode(this.refs.flightNumber),
 			cityEl = ReactDOM.findDOMNode(this.refs.city),
 			airplaneTypeEl = ReactDOM.findDOMNode(this.refs.airplaneType),
@@ -81,18 +80,16 @@ export default class AdminTablo extends Component {
 		});
 	}
 	/**
-	 * 
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * Выбираем тип рейса
+	 * @param  {Object} event объект события
 	 */
 	_checkRuleClick (event) {
 		this.setState({flightType: event.target.value});
 	}
 	/**
-	 * 
-	 * @param  {[type]} fieldName [description]
-	 * @param  {[type]} event     [description]
-	 * @return {[type]}           [description]
+	 * Отслеживаем пустые поля ввода или нет
+	 * @param  {String} fieldName Имя поля ввода
+	 * @param  {Object} event     объект события
 	 */
 	_fieldChange (fieldName, event) {
 		let next = {};
@@ -136,7 +133,7 @@ export default class AdminTablo extends Component {
 					</div>
 					<div className="adminTabloForm_i_wrap">
 					<div className="adminTabloForm_i">
-						<label for="flightNumberId">Номер рейса:</label>
+						<label htmlFor="flightNumberId">Номер рейса:</label>
 						<input
 						 id="flightNumberId"
 						 type="text" 
@@ -146,7 +143,7 @@ export default class AdminTablo extends Component {
 						 onChange={::this._fieldChange.bind(this, 'flightNumberIsEmpty')} />
 					</div>
 					<div className="adminTabloForm_i">
-						<label for="cityId">Город отправления\прибытия:</label>
+						<label htmlFor="cityId">Город отправления\прибытия:</label>
 						<input
 						 id="cityId"
 						 type="text" 
@@ -156,7 +153,7 @@ export default class AdminTablo extends Component {
 						 onChange={::this._fieldChange.bind(this, 'cityIsEmpty')} />
 					</div>
 					<div className="adminTabloForm_i">
-						<label for="airplaneTypeId">
+						<label htmlFor="airplaneTypeId">
 							Тип ВС <span>(Воздушное Судно):</span>
 						</label>
 						<input
@@ -168,7 +165,7 @@ export default class AdminTablo extends Component {
 						 onChange={::this._fieldChange.bind(this, 'airplaneIsEmpty')} />
 					</div>
 					<div className="adminTabloForm_i">
-						<label for="timeId">Время отправления\прибытия:</label>
+						<label htmlFor="timeId">Время отправления\прибытия:</label>
 						<input
 						 id="timeId"
 						 type="text" 
@@ -178,7 +175,7 @@ export default class AdminTablo extends Component {
 						 onChange={::this._fieldChange.bind(this, 'timeIsEmpty')} />
 					</div>
 					<div className="adminTabloForm_i">
-						<label for="timeFactId">Фактическое время:</label>
+						<label htmlFor="timeFactId">Фактическое время:</label>
 						<input
 						 id="timeFactId"
 						 type="text" 
@@ -188,7 +185,7 @@ export default class AdminTablo extends Component {
 						 onChange={::this._fieldChange.bind(this, 'timeIsEmpty')} />
 					</div>
 					<div className="adminTabloForm_i">
-						<label for="statusId">Статус:</label>
+						<label htmlFor="statusId">Статус:</label>
 						<input
 						 id="statusId"
 						 type="text" 
@@ -221,7 +218,10 @@ export default class AdminTablo extends Component {
 		)
 	}
 }
-
+/**
+ * Типы данных передаваемых компоненте
+ * @type {Object}
+ */
 AdminTablo.propTypes = {
   flights: PropTypes.object.isRequired,
   getDepartureFlights: PropTypes.func.isRequired,

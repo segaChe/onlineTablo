@@ -1,0 +1,193 @@
+.editFlightBtn {
+	font-size: 0.65em;
+}
+
+.deleteFlightBtn {
+	font-size: 0.65em;
+}
+.flightsTable_container {
+	margin-top: 2%;
+}
+.flightsTable_menu {
+	margin-bottom: 2%;
+}
+
+.flightsTable_menu > * {
+	vertical-align: middle;
+}
+
+.changeCity {
+	margin-left: 2%;
+	padding: .2em 1em;
+	font-size: 1em; 
+}
+.changeStatus {
+	margin-left: 2%;
+	padding: .2em 1em;
+	font-size: 1em; 
+}
+.flightsTableHeader {
+	font-size: 1.5em;
+	font-weight: 700;
+	margin-bottom: 2%; 
+}
+.flightsTable {
+	margin: 0 auto;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.flightsTable_item:nth-child(even) {
+	background-color: #bbb; 
+}
+.flightsTable_flight_i {
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+.counterFlights {
+	font-size: 0.8em;
+	text-align: left;
+}
+
+th.flightsTable_flight_i {
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	background-color: #eee; 
+}.adminTablo_wrap {
+
+}
+.adminTabloForm {
+	border: 1px solid #666;
+	margin-bottom: 5%;
+}
+
+.adminTabloForm_i_wrap {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.adminTabloForm_i {
+	display: block;
+	position: relative;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.adminTabloForm_i input {
+	margin: 0.5% ;
+}
+
+.adminTabloForm_i label {
+
+}
+
+.flightTypes {
+	margin: 2% 0;
+}
+
+.flightTypes label {
+
+}
+
+.addFlightBtn:disabled {
+	display: block;
+	background-color: #aaa;
+}
+
+.addFlightBtn:disabled:hover {
+	background-color: #aaa
+}
+
+.addFlightBtn.button {
+	display: block;
+	margin: 2% auto;
+}
+
+/*@media(min-width: 1000px) {
+	.adminTabloForm_i_wrap {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+
+@media(max-width: 750px){
+
+	.adminTabloForm_i_wrap {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.adminTabloForm_i {
+		margin-top: 3%;
+	}
+
+	.adminTabloForm_i > * {
+		display: block;
+		text-align: center;
+	}
+
+	.adminTabloForm_i input {
+		margin: 2% auto;
+	}
+
+}*/
+
+.tablo_content_wrap {
+
+}
+
+.tablo_content {
+ position: relative;
+}
+.adminBtn_wrap {
+  right: 0;
+  top: -10%;
+  display: inline-block;
+  margin-bottom: 1%;
+}
+.adminBtn_Header {
+  color: #666;
+  font-size: 0.8em;
+}
+.adminBtn {
+  font-size: 0.65em;
+  background-color: #888;
+}.tablo_container {
+
+}
+.tablo_header {
+	font-size: 1.5em;
+	margin-bottom: 1%;
+}
+.tablo_openBtn {
+	margin-bottom: 3%;
+}.button {
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+  background: #555;
+  cursor: pointer;
+}
+
+.button:hover { background-color: #777; }
+.button:active { background: #999; }
+
+body {
+  width: 100%;
+  text-align: center;
+
+}
+
+#root {
+	/*width: 80%;*/
+  width: 730px;
+	margin: 0 auto;
+  font-family: sans-serif;
+}

@@ -11,8 +11,6 @@ import '../style/app.css';
 class App extends Component {
 	/**
 	 * @constructor
-	 * @param  {[type]} props [description]
-	 * @return {[type]}       [description]
 	 */
 	constructor (props) {
 		super(props);
@@ -22,9 +20,8 @@ class App extends Component {
 		}; 
 	} 
 	/**
-	 * 
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * Открытие и закрытие табло
+	 * @param  {Object} event объект события
 	 */
 	onTabloOpenBtnClick(event) {
 		this.setState({tabloIsOpen: !this.state.tabloIsOpen});
@@ -70,8 +67,8 @@ class App extends Component {
 
 /**
  * 
- * @param  {[type]} state [description]
- * @return {[type]}       [description]
+ * @param  {Object} state 
+ * @return {Object}       
  */
 function mapStateToProps (state) {
   return {

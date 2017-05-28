@@ -6,6 +6,7 @@ import { GET_FLIGHTS_REQUEST, GET_FLIGHTS_SUCCESS,
 		 EDIT_FLIGHT,
 		 DELETE_FLIGHT } from '../constants/constants';
 
+//данные для имитации асинхронного запроса
 // const flights = {
 // 	DepartureFlights: [
 // 		{
@@ -79,27 +80,8 @@ import { GET_FLIGHTS_REQUEST, GET_FLIGHTS_SUCCESS,
 
 // }
 
-/**
- * Запрос данных 
- * @return {Object}  
- */
-export function fetchFlights() {
-	return dispatch => {
-		dispatch({
-			type: GET_FLIGHTS_REQUEST,
-		});
+//имитация асинхронного запроса
 
-		return fetch('data/flights.json')
-		  .then((response) => response.json())
-		  .then(json => dispatch({
-		  	type: GET_FLIGHTS_SUCCESS,
-		  	payload: json
-		}));
-	};
-}
-
-// имитация асинхронного запроса
-// 
 // export function fetchFlights() {
 // 	return (dispatch) => {
 // 		dispatch({
@@ -116,9 +98,29 @@ export function fetchFlights() {
 // }
 
 /**
+ * Запрос данных 
+ * @return {Object} Объект состоя
+ */
+export function fetchFlights() {
+	return dispatch => {
+		dispatch({
+			type: GET_FLIGHTS_REQUEST,
+		});
+
+		return fetch('data/flights.json')
+		  .then((response) => response.json())
+		  .then(json => dispatch({
+		  	type: GET_FLIGHTS_SUCCESS,
+		  	payload: json
+		}));
+	};
+}
+
+
+/**
  * Запрос Вылетов 
- * @param  {[type]} flights [description]
- * @return {[type]}         [description]
+ * @param  {Object} flights [description]
+ * @return {Object} Объект состоя
  */
 export function getDepartureFlights (flights) {
 	return {
@@ -129,8 +131,8 @@ export function getDepartureFlights (flights) {
 
 /**
  * Запрос Прилетов
- * @param  {[type]} flights [description]
- * @return {[type]}         [description]
+ * @param  {Object} flights [description]
+ * @return {Object} Объект состояния
  */
 export function getArrivalFlights (flights) {
 	return {
@@ -140,12 +142,12 @@ export function getArrivalFlights (flights) {
 }
 /**
  * Редактирует статус и фактическое время рейса
- * @param  {[type]} flights    [description]
- * @param  {[type]} flightId   [description]
- * @param  {[type]} flightType [description]
- * @param  {[type]} status     [description]
- * @param  {[type]} timeFact   [description]
- * @return {[type]}            [description]
+ * @param  {Object} flights    Все рейсы
+ * @param  {String} flightId   Id рейса
+ * @param  {String} flightType Тип рейса (вылеты\прибытие)
+ * @param  {String} status     Статус рейса
+ * @param  {String} timeFact   Фактическое время (вылета\прибытия)
+ * @return {Object} 		   Объект состояния
  */
 export function editFlight (flights, flightId, flightType, status, timeFact) {
 	for (let i = 0; i < flights[flightType].length; i++) {
@@ -161,10 +163,10 @@ export function editFlight (flights, flightId, flightType, status, timeFact) {
 }
 /**
  * Удаляет рейс
- * @param  {[type]} flights    [description]
- * @param  {[type]} flightId   [description]
- * @param  {[type]} flightType [description]
- * @return {[type]}            [description]
+ * @param  {Object} flights    Все рейсы
+ * @param  {String} flightId   Id рейса
+ * @param  {String} flightType Тип рейса (вылеты\прибытие)
+ * @return {Object} 		   Объект состояния
  */
 export function deleteFlight (flights, flightId, flightType) {
 	flights[flightType] = flights[flightType].filter( (i)=> i.id != flightId );

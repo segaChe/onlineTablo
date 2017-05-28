@@ -16,13 +16,22 @@ export default class Tablo extends Component {
 	 */
 	constructor(props) {
 		super(props);
-		this.props.fetchFlights();
 		this.state = {
 			flightsIsEdit: false,
 			adminBtnText: 'Открыть'
 		}
 	}
-
+	/**
+	 * Загружаем данные до render
+	 */
+	componentWillMount() {
+		this.props.fetchFlights();
+	}
+	/**
+	 * Открытие и закрытие административной панели 
+	 * @param  {[type]} event [description]
+	 * @return {[type]}       [description]
+	 */
 	onAdminBtnClick(event) {
 		this.setState({flightsIsEdit: !this.state.flightsIsEdit});
 		if (!this.state.flightsIsEdit) {
@@ -76,6 +85,10 @@ export default class Tablo extends Component {
 	}
 }
 
+/**
+ * Типы данных передаваемых компоненте
+ * @type {Object}
+ */
 Tablo.propTypes = {
   flights: PropTypes.object.isRequired,
   fetchFlights: PropTypes.func.isRequired,

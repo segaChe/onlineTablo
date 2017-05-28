@@ -8,8 +8,6 @@ import '../style/flightsTable.css';
 export default class FlightsTable extends Component {
 	/**
 	 * @constructor
-	 * @param  {[type]} props [description]
-	 * @return {[type]}       [description]
 	 */
 	constructor (props) {
 		super(props);
@@ -21,43 +19,29 @@ export default class FlightsTable extends Component {
 	}
 	/**
 	 * Отображает вылеты
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
 	 */
-	onDepartureBtnClick(event) {
+	onDepartureBtnClick() {
 		this.props.getDepartureFlights(this.props.flights);
 	}
 	/**
 	 * Отображает прилеты
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
 	 */
-	onArrivalBtnClick(event) {
+	onArrivalBtnClick() {
 		this.props.getArrivalFlights(this.props.flights);
 	}
 	/**
 	 * Фильтрует рейсы по городу
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * @param  {Object} event объект события
 	 */
 	onChangeCity (event) {
 		this.setState( {city: event.target.value.toLowerCase()} );
 	}
 	/**
 	 * Фильтрует рейсы по статусу
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
+	 * @param  {Object} event объект события
 	 */
 	onChangeStatus (event) {
 		this.setState( {status: event.target.value} );
-	}
-	/**
-	 * Открывает табло администрирования
-	 * @param  {[type]} event [description]
-	 * @return {[type]}       [description]
-	 */
-	onEditBtnClick(event) {
-
 	}
 
 	/**
